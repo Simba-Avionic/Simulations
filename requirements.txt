@@ -1,0 +1,3 @@
+rocketpy
+pyyaml
+jupyter
