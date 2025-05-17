@@ -1,5 +1,11 @@
 # .yamllint
+---
 extends: default
+
+ignore: |
+  .venv/
+  .github/workflows/yamllint.yml
+  .tools/.yamllint
 
 rules:
   line-length:

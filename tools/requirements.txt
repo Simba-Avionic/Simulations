@@ -1,3 +1,4 @@
 rocketpy
 pyyaml
 jupyter
+pykwalify

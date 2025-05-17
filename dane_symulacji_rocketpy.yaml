@@ -76,13 +76,13 @@ Fins:
   position: 0.353
 
 Parachutes:
-  - main:
+  main:
     cd_s: 10.706
     trigger: 550
     sampling_rate: 100.0
     lag: 3.0
     noise: [0.0, 0.0, 0.0]
-  - drogue:
+  drogue:
     cd_s: 1.43
     trigger: "apogee"
     sampling_rate: 100.0

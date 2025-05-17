@@ -1,5 +1,20 @@
 # Simulations
 
+## Korzystanie z projektu
+
+### Instalacja
+
+1. Utwórz środowisko Pythona:
+   ```bash
+   python -m venv .venv
+   ````
+
+2. Zainstaluj zależności:
+
+   ```bash
+   pip install -r tools/requirements.txt
+   ```
+
 ## 🧩 1. Plik YAML: **dane_symulacji_rocketpy.yaml**
 
 **Zawiera: parametry fizyczne i środowiskowe rakiety**
@@ -182,7 +197,9 @@ Jeśli nie jesteś pewien, czy plik jest poprawny – zapytaj osobę techniczną
 ```bash
 yamllint -c tools/.yamllint <nazwa_pliku>.yaml
 ```
-
+```bash
+ pykwalify -d dane_symulacji_rocketpy.yaml -s tools/schema.yml 
+```
 
 
 przed 1 uruchomieniem wymagane zainstalowanie yamllint:

@@ -1,0 +1,209 @@
+type: map
+mapping:
+  Env:
+    type: map
+    mapping:
+      latitude:
+        type: float
+      longitude:
+        type: float
+      elevation:
+        type: float
+      atmospheric_model:
+        type: str
+
+  Tank:
+    type: map
+    mapping:
+      oxidizer_liq:
+        type: map
+        mapping:
+          name:
+            type: str
+          density:
+            type: float
+      oxidizer_gas:
+        type: map
+        mapping:
+          name:
+            type: str
+          density:
+            type: float
+      height:
+        type: float
+      width:
+        type: float
+      name:
+        type: str
+      flux_time:
+        type: float
+      initial_liquid_mass:
+        type: float
+      initial_gas_mass:
+        type: float
+      liquid_mass_flow_rate_out:
+        type: float
+      position:
+        type: float
+
+  Motor:
+    type: map
+    mapping:
+      thrust_source:
+        type: str
+      dry_mass:
+        type: float
+      dry_inertia:
+        type: seq
+        sequence:
+          - type: float
+          - type: float
+          - type: float
+      center_of_dry_mass_position:
+        type: float
+      burn_time:
+        type: float
+      grain_number:
+        type: int
+      grain_separation:
+        type: float
+      grain_outer_radius:
+        type: float
+      grain_initial_inner_radius:
+        type: float
+      grain_initial_height:
+        type: float
+      grain_density:
+        type: float
+      nozzle_radius:
+        type: float
+      throat_radius:
+        type: float
+      grains_center_of_mass_position:
+        type: float
+      coordinate_system_orientation:
+        type: str
+      tank_position:
+        type: float
+
+  Rocket:
+    type: map
+    mapping:
+      radius:
+        type: float
+      mass:
+        type: float
+      inertia:
+        type: seq
+        sequence:
+          - type: float
+          - type: float
+          - type: float
+      power_off_drag:
+        type: str
+      power_on_drag:
+        type: str
+      center_of_mass_without_motor:
+        type: float
+      coordinate_system_orientation:
+        type: str
+
+  RailButtons:
+    type: map
+    mapping:
+      upper_button_position:
+        type: float
+      lower_button_position:
+        type: float
+      angular_position:
+        type: float
+
+  Nose:
+    type: map
+    mapping:
+      length:
+        type: float
+      kind:
+        type: str
+      bluffness:
+        type: any
+        required: false
+      power:
+        type: float
+      position:
+        type: float
+
+  Parachutes:
+    type: map
+    mapping:
+      main:
+        type: map
+        mapping:
+          cd_s:
+            type: float
+          trigger:
+            type: int
+          sampling_rate:
+            type: float
+          lag:
+            type: float
+          noise:
+            type: seq
+            sequence:
+              - type: float
+              - type: float
+              - type: float
+      drogue:
+        type: map
+        mapping:
+          cd_s:
+            type: float
+          trigger:
+            type: str
+          sampling_rate:
+            type: float
+          lag:
+            type: float
+          noise:
+            type: seq
+            sequence:
+              - type: float
+              - type: float
+              - type: float
+
+  Tail:
+    type: map
+    mapping:
+      top_radius:
+        type: float
+      bottom_radius:
+        type: float
+      length:
+        type: float
+      position:
+        type: float
+
+  Fins:
+    type: map
+    mapping:
+      n:
+        type: float
+      root_chord:
+        type: float
+      tip_chord:
+        type: float
+      span:
+        type: float
+      sweep_length:
+        type: float
+      cant_angle:
+        type: float
+      position:
+        type: float
+  Flight:
+    type: map
+    mapping:
+      rail_length:
+        type: float
+      flight_day:
+        type: str

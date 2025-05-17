@@ -1,0 +1,32 @@
+name: Validate YAML with PyKwalify
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'dane_symulacji_rocketpy.yaml'
+      - 'tools/schema.yml'
+  pull_request:
+    paths:
+      - 'dane_symulacji_rocketpy.yaml'
+      - 'tools/schema.yml'
+
+jobs:
+  validate_yaml:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install pykwalify
+        run: pip install pykwalify
+
+      - name: Validate YAML file
+        run: pykwalify -d dane_symulacji_rocketpy.yaml -s tools/schema.yml
