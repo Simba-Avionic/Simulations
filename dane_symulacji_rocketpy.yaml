@@ -1,7 +1,7 @@
 ---
 Env:
-  latitude: 35.34723084964506 # S -> -, N -> +
-  longitude: -117.81006429132387 # E -> +, W -> -
+  latitude: 35.34723084964506  # S -> -, N -> +
+  longitude: -117.81006429132387  # E -> +, W -> -
   elevation: 624.0
   atmospheric_model: standard_atmosphere
 
