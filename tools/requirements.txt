@@ -1,0 +1,4 @@
+rocketpy
+pyyaml
+jupyter
+pykwalify
