@@ -22,7 +22,7 @@ Tank:
   position: 1.42
 
 Motor:
-  thrust_source: ./in_data/thrust_source.eng
+  thrust_source: ./in_data/SimLE_SimBa_R7_Rocket.eng
   dry_mass: 12.5
   dry_inertia: [1.1, 0.04, 1.1]
   center_of_dry_mass_position: 0.58

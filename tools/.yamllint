@@ -5,7 +5,7 @@ extends: default
 ignore: |
   .venv/
   .github/workflows/yamllint.yml
-  .tools/.yamllint
+  .github/workflows/pykwalify.yml
 
 rules:
   line-length:

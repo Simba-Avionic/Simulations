@@ -2,3 +2,4 @@ rocketpy
 pyyaml
 jupyter
 pykwalify
+fpdf2

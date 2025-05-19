@@ -1,0 +1,122 @@
+---
+type: map
+mapping:
+  enabled:
+    type: bool
+    required: true
+  terminate_on_apogee:
+    type: bool
+    required: true
+
+  Accel:
+    type: seq
+    sequence:
+      - type: map
+        mapping:
+          position: {type: float, required: true}
+          sampling_rate: {type: int, required: true}
+          consider_gravity: {type: bool, required: true}
+          orientation:
+            type: seq
+            sequence:
+              - type: float
+              - type: float
+              - type: float
+          measurement_range: {type: float, required: true}
+          resolution: {type: float, required: true}
+          noise_density: {type: float, required: true}
+          random_walk_density: {type: float, required: true}
+          constant_bias: {type: float, required: true}
+          operating_temperature: {type: float, required: true}
+          temperature_bias: {type: float, required: true}
+          temperature_scale_factor: {type: float, required: true}
+          cross_axis_sensitivity: {type: float, required: true}
+          name: {type: str, required: true}
+
+  Gyro:
+    type: seq
+    sequence:
+      - type: map
+        mapping:
+          position: {type: float, required: true}
+          sampling_rate: {type: int, required: true}
+          resolution: {type: float, required: true}
+          orientation:
+            type: seq
+            sequence:
+              - type: float
+              - type: float
+              - type: float
+          noise_density:
+            type: seq
+            sequence:
+              - type: float
+              - type: float
+              - type: float
+          noise_variance: {type: float, required: true}
+          random_walk_density:
+            type: seq
+            sequence:
+              - type: float
+              - type: float
+              - type: float
+          random_walk_variance:
+            type: seq
+            sequence:
+              - type: float
+              - type: float
+              - type: float
+          constant_bias:
+            type: seq
+            sequence:
+              - type: float
+              - type: float
+              - type: float
+          operating_temperature: {type: float, required: true}
+          temperature_bias:
+            type: seq
+            sequence:
+              - type: float
+              - type: float
+              - type: float
+          temperature_scale_factor:
+            type: seq
+            sequence:
+              - type: float
+              - type: float
+              - type: float
+          cross_axis_sensitivity: {type: float, required: true}
+          acceleration_sensitivity:
+            type: seq
+            sequence:
+              - type: float
+              - type: float
+              - type: float
+          name: {type: str, required: true}
+
+  Barometer:
+    type: seq
+    sequence:
+      - type: map
+        mapping:
+          sampling_rate: {type: int, required: true}
+          measurement_range: {type: float, required: true}
+          resolution: {type: float, required: true}
+          noise_density: {type: float, required: true}
+          noise_variance: {type: float, required: true}
+          random_walk_density: {type: float, required: true}
+          constant_bias: {type: float, required: true}
+          operating_temperature: {type: float, required: true}
+          temperature_bias: {type: float, required: true}
+          temperature_scale_factor: {type: float, required: true}
+          name: {type: str, required: true}
+
+  Gps:
+    type: seq
+    sequence:
+      - type: map
+        mapping:
+          sampling_rate: {type: int, required: true}
+          position_accuracy: {type: float, required: true}
+          altitude_accuracy: {type: float, required: true}
+          name: {type: str, required: true}

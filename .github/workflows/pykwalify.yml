@@ -28,5 +28,8 @@ jobs:
       - name: Install pykwalify
         run: pip install pykwalify
 
-      - name: Validate YAML file
-        run: pykwalify -d dane_symulacji_rocketpy.yaml -s tools/schema.yml
+      - name: Validate symulation data
+        run: pykwalify -d dane_symulacji_rocketpy.yaml -s tools/data_schema.yml
+      - name: Validate sensors config
+        run: pykwalify -d sensors.yaml -s tools/sensors_schema.yaml
+

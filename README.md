@@ -198,7 +198,7 @@ Jeśli nie jesteś pewien, czy plik jest poprawny – zapytaj osobę techniczną
 yamllint -c tools/.yamllint <nazwa_pliku>.yaml
 ```
 ```bash
- pykwalify -d dane_symulacji_rocketpy.yaml -s tools/schema.yml 
+ pykwalify -d dane_symulacji_rocketpy.yaml -s tools/data_schema.yml 
 ```
 
 
