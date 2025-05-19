@@ -1,0 +1,35 @@
+# .github/workflows/yamllint.yml
+---
+name: YAML Lint
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**/*.yaml'
+      - '**/*.yml'
+  pull_request:
+    paths:
+      - '**/*.yaml'
+      - '**/*.yml'
+
+jobs:
+  lint:
+    name: Run yamllint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install yamllint
+        run: pip install yamllint
+
+      - name: Run yamllint
+        run: yamllint -c ./tools/.yamllint .

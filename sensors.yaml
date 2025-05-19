@@ -1,0 +1,59 @@
+---
+enabled: true  # set true to add sensors to rocket
+terminate_on_apogee: false
+
+Accel:
+  - position: 1.278  # pozycja sensora (z axis)
+    sampling_rate: 100  # częstotliwość w Hz
+    consider_gravity: false  # Czy czujnik uwzględnia wpływ grawitacji na przyspieszenie
+    orientation: [60, 60, 60]  # orientacja czujnika w rakiecie
+    measurement_range: 70  # in m/s^2
+    resolution: 0.4882  # m/s^2/LSB
+    noise_density: 0.05  # m/s^2/sqrt(Hz)
+    random_walk_density: 0.02  # m/s^2/sqrt(Hz)
+    constant_bias: 1  # m/s^2
+    operating_temperature: 25  # Kelvin
+    temperature_bias: 0.02  # m/s^2/K
+    temperature_scale_factor: 0.02  # %/K
+    cross_axis_sensitivity: 0.02  # %
+    name: perfect_accel  # filename (program save all data in folder sensors) with extension csv
+
+Gyro:
+  - position: 1.278  # pozycja sensora (z axis)
+    sampling_rate: 100  # Hz
+    resolution: 0.001064225153655079  # rad/s/LSB
+    orientation: [-60, -60, -60]  # orientacja czujnika w rakiecie
+    noise_density: [0, 0.03, 0.05]  # ras/s/sqrt(Hz)
+    noise_variance: 1.01  # (rad/s)^2
+    random_walk_density: [0, 0.01, 0.02]  # rad/s/sqrt(Hz)
+    random_walk_variance: [1, 1, 1.05]  # (rad/s)^2
+    constant_bias: [0, 0.3, 0.5]  # rad/s
+    operating_temperature: 25  # Kelvin
+    temperature_bias: [0, 0.01, 0.02]  # rad/s/Kelvin
+    temperature_scale_factor: [0, 0.01, 0.02]  # %/Kelvin
+    cross_axis_sensitivity: 0.5  # %
+    acceleration_sensitivity: [0, 0.0008, 0.0017]  # rad/s/g
+    name: perfect_gyro  # filename (program save all data in folder sensors)
+
+Barometer:
+  - sampling_rate: 50  # Hz
+    measurement_range: 100000  # Pa
+    resolution: 0.16  # Pa/LSB
+    noise_density: 19  # Pa/sqrt(Hz)
+    noise_variance: 19  # Pa^2
+    random_walk_density: 0.01  # Pa/sqrt(Hz)
+    constant_bias: 1  # Pa
+    operating_temperature: 25  # Kelvin
+    temperature_bias: 0.02  # Pa/Kelvin
+    temperature_scale_factor: 0.02  # %/Kelvin
+    name: baro  # filename (program save all data in folder sensors)
+
+Gps:
+  - sampling_rate: 1  # Hz
+    position_accuracy: 0  # m
+    altitude_accuracy: 0  # m
+    name: perfect_gps  # filename (program save all data in folder sensors)
+  - sampling_rate: 1  # Hz
+    position_accuracy: 1  # m
+    altitude_accuracy: 1  # m
+    name: gps  # filename (program save all data in folder sensors)
