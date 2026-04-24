@@ -1,0 +1,107 @@
+---
+Env:
+  latitude: 35.34723084964506  # S -> -, N -> +
+  longitude: -117.81006429132387  # E -> +, W -> -
+  elevation: 624.0
+  atmospheric_model: custom_atmosphere
+  custom_atmosphere:
+    pressure: null
+    temperature: 300.0
+    wind_u:
+      - [0, 5]
+      - [1000, 10]
+    wind_v:
+      - [0, -2]
+      - [500, 3]
+      - [1600, 2]
+
+Tank:
+  oxidizer_liq:
+    name: nitrous oxide
+    density: 790.0
+  oxidizer_gas:
+    name: nitrous oxide
+    density: 180.0
+  radius: 0.087
+  height: 0.75
+  spherical_caps: false
+  name: oxidizer_tank_r7
+  flux_time: 4.9
+  initial_liquid_mass: 9.87
+  initial_gas_mass: 0.13
+  liquid_mass_flow_rate_out: 1.4
+  position: 1.537
+
+Motor:
+  thrust_source: ./R7/SimLE_SimBa_R7_Rocket.eng
+  dry_mass: 14.925
+  dry_inertia: [0.1306, 0.1306, 0.0504]
+  center_of_dry_mass_position: 0.4379
+  burn_time: 9.0
+  grain_number: 1
+  grain_separation: 0.0
+  grain_outer_radius: 0.063
+  grain_initial_inner_radius: 0.035
+  grain_initial_height: 0.5
+  grain_density: 947.0
+  nozzle_radius: 0.038435
+  nozzle_position: 0.0
+  throat_radius: 0.0185
+  grains_center_of_mass_position: 0.529
+  interpolation_method: linear
+  coordinate_system_orientation: nozzle_to_combustion_chamber
+
+Rocket:
+  radius: 0.087
+  mass: 36.47
+  inertia: [0.213060832, 0.213060243, 0.195413534, -0.003209552, -0.028376785, -0.031428815]
+  power_off_drag: ./R7/RASAero_CD_Power-Off_R7.CSV
+  power_on_drag: ./R7/RASAero_CD_Power-On_R7.CSV
+  center_of_mass_without_motor: 2.2055
+  coordinate_system_orientation: tail_to_nose
+
+RailButtons:
+  upper_button_position: 3.024
+  lower_button_position: 0.94
+  angular_position: 10.0
+
+Nose:
+  length: 0.76
+  kind: powerseries
+  bluffness: 0.0
+  power: 0.8
+  position: 4.26744
+
+Tail:
+  top_radius: 0.087
+  bottom_radius: 0.072
+  length: 0.085
+  position: 0.085
+
+Fins:
+  n: 4
+  root_chord: 0.204
+  tip_chord: 0.136
+  span: 0.1225
+  sweep_length: 0.034
+  cant_angle: 0.0
+  position: 0.323
+
+Parachutes:
+  main:
+    cd_s: 10.706
+    trigger: 550
+    sampling_rate: 100.0
+    lag: 3.0
+    noise: [0.0, 0.0, 0.0]
+  drogue:
+    cd_s: 1.43
+    trigger: "apogee"
+    sampling_rate: 100.0
+    lag: 3.0
+    noise: [0.0, 0.0, 0.0]
+
+Flight:
+  rail_length: 8.0
+  flight_day: "2025-05-15"
+  inclination: 80.0
